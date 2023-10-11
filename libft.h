@@ -16,19 +16,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdio.h>
+# include <string.h>
 
-/*{
-void	*content;
-struct s_list	*next	
-	struct		t_list;
-}*/
-
-typedef struct s_split_next
-{
-	size_t	start;
-	size_t	lenght;
-}							t_split_next;
-
+//Mandatory
 int			ft_atoi(const char *str);
 
 void		ft_bzero(void *s, size_t n);
@@ -101,4 +92,12 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char		*ft_strrchr(const char *s, int c);
 
+//BONUS
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list		*ft_lstnew(void *content);
 #endif

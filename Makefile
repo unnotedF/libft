@@ -6,7 +6,7 @@
 #    By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 22:39:15 by flucas-d          #+#    #+#              #
-#    Updated: 2023/10/07 10:03:29 by flucas-d         ###   ########.fr        #
+#    Updated: 2023/10/11 17:53:07 by flucas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,10 @@ SRCS    = ft_atoi.c ft_itoa.c ft_toupper.c ft_tolower.c \
           ft_strlcat.c ft_substr.c ft_strtrim.c ft_strnstr.c ft_striteri.c \
 		  ft_strrchr.c
 
+BONUS_SRC = ft_lstnew.c
+
 OBJS    = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 # Rules
 all: $(NAME)
@@ -36,8 +39,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
+bonus: $(OBJS) $(BONUS_OBJS)
+		ar rc $(NAME) $(BONUS_OBJS) $(OBJS)
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
