@@ -6,9 +6,11 @@
 /*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:01:09 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/11 18:01:47 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 18:28:05 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
