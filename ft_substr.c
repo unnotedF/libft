@@ -6,7 +6,7 @@
 /*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:26:48 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/11 15:17:12 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:19:22 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start < ft_strlen(s))
 		s += start;
 	else
-		s += strlen(s);
+		s += ft_strlen(s);
 	while (*s++ && len--)
 		sublen++;
 	s = s - sublen - 1;
