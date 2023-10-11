@@ -103,4 +103,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strrchr(const char *s, int c);
 
 t_list		*ft_lstnew(void *content);
+
+void		ft_lstadd_front(t_list **list, t_list *new);
+
 #endif
