@@ -6,7 +6,7 @@
 /*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 21:57:53 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/11 14:40:49 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:51:31 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	allsize;
-	void	*pds;
+	char	*dst;
 
-	if (count == 0 || size == 0)
+	if (size > 0 && count > SIZE_MAX / size)
 		return (NULL);
-	if (SIZE_MAX / count < size)
+	dst = malloc(count * size);
+	if (!dst)
 		return (NULL);
-	allsize = size * count;
-	pds = malloc(allsize);
-	if (!pds)
-		return (0);
-	ft_memset(pds, 0, allsize);
-	return (pds);
+	ft_bzero(dst, count * size);
+	return (dst);
 }
