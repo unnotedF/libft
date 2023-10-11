@@ -6,7 +6,7 @@
 #    By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 22:39:15 by flucas-d          #+#    #+#              #
-#    Updated: 2023/10/11 18:44:27 by flucas-d         ###   ########.fr        #
+#    Updated: 2023/10/11 18:49:45 by flucas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS    = ft_atoi.c ft_itoa.c ft_toupper.c ft_tolower.c \
           ft_strlcat.c ft_substr.c ft_strtrim.c ft_strnstr.c ft_striteri.c \
 		  ft_strrchr.c
 
-BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c
+BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 
 OBJS    = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
