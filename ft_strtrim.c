@@ -6,7 +6,7 @@
 /*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:56:41 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/11 15:31:37 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 18:47:06 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(tchar, s1 + beg, len + 1);
 	return (tchar);
 }
-
