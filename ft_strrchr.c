@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flucas-d <flucas-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:29:40 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/06 17:15:18 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:36:38 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 		i++;
+	if (c == '\0')
+		return ((char *)&s[i]);
 	while (i >= 0)
 	{
 		if (s[i] == c)
