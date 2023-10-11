@@ -6,7 +6,7 @@
 /*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 21:04:47 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/09/01 21:21:41 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:27:20 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (s[i] == (char)c) 
+		return ((char *)&s[i]);
 	return (0);
 }
 /*
