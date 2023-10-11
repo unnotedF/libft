@@ -6,7 +6,7 @@
 /*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 18:40:51 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/11 04:20:43 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/11 04:24:05 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,25 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
-	i = -1;
 	if (!dst && !src)
-		return (dst);
-	if (src < dst)
+		return (0);
+	i = 0;
+	if ((size_t)dst - (size_t)src < len)
 	{
-		while (++i < len)
-			((char *)dst)[len - i - 1] = ((char *)src)[len - i - 1];
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i--;
+		}
 	}
 	else
-		ft_memcpy(dst, src, len);
+	{
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
 	return (dst);
 }
 /*
