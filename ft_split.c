@@ -6,7 +6,7 @@
 /*   By: flucas-d <flucas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 19:49:34 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/06 15:06:46 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:48:00 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,70 +25,59 @@ static size_t	ft_strlen(const char *s)
 	return (len);
 }
 */
-static int	count_words(const char *str, char c)
+static void	ft_allocate(char **tab, char const *s, char sep)
 {
-	int	i;
-	int	ctrl;
+	char		**array;
+	char const	*tmp;
 
-	i = 0;
-	ctrl = 0;
-	while (*str)
+	tmp = s;
+	array = tab;
+	while (*tmp)
 	{
-		if (*str != c && ctrl == 0)
+		while (*s == sep)
+			s++;
+		tmp = s;
+		while (*tmp && *tmp != sep)
+			tmp++;
+		if (*tmp == sep || tmp > s)
 		{
-			ctrl = 1;
-			i++;
+			*array = ft_substr(s, 0, tmp - s);
+			s = tmp;
+			array++;
 		}
-		else if (*str == c)
-			ctrl = 0;
-		str++;
 	}
-	return (i);
+	*array = NULL;
 }
 
-static char	*word_dup(const char *str, int beg, int end)
+static int	ft_count_words(char const *s, char sep)
 {
-	char	*pds;
-	int		i;
+	size_t	count;
 
-	i = 0;
-	pds = malloc((end - beg + 1) * sizeof(char));
-	while (beg < end)
+	count = 0;
+	while (*s)
 	{
-		pds[i] = str[beg];
-		i++;
-		beg++;
+		while (*s == sep)
+			++s;
+		if (*s)
+			++count;
+		while (*s && *s != sep)
+			++s;
 	}
-	pds[i] = '\0';
-	return (pds);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		position;
 	char	**split;
+	size_t	size;
 
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if ((!s) || (!split))
-		return (0);
-	i = 0;
-	j = 0;
-	position = -1;
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && position < 0)
-			position = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && position >= 0)
-		{
-			split[j] = word_dup(s, position, i);
-			j++;
-			position = -1;
-		}
-		i++;
-	}
-	split[j] = NULL;
+	if (!s)
+		return (NULL);
+	size = ft_count_words(s, c);
+	split = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!split)
+		return (NULL);
+	ft_allocate(split, s, c);
 	return (split);
 }
 /*

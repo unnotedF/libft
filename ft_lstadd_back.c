@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flucas-d <flucas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 21:04:47 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/20 12:53:03 by flucas-d         ###   ########.fr       */
+/*   Created: 2023/10/13 15:10:10 by flucas-d          #+#    #+#             */
+/*   Updated: 2023/10/13 15:33:44 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list	*tmp;
 
-	i = 0;
-	while (s[i])
+	if (!new)
+		return ;
+	if (!*lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		*lst = new;
+		return ;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (0);
+	tmp = ft_lstlast(*lst);
+	tmp->next = new;
 }
-/*
-int	main()
-{
-	char	str[] = "procurando Nemo";
-	printf("%s\n", ft_strchr(str, 'N'));
-	return (0);
-}*/

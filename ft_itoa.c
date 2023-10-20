@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
+/*   By: flucas-d <flucas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 19:11:15 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/11 15:37:38 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:53:12 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	get_nbr_size(int nbr)
 {
-	size_t	size; 
+	size_t	size;
 
 	size = 1;
 	while (nbr / 10)

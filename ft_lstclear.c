@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flucas-d <flucas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 21:04:47 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/20 12:53:03 by flucas-d         ###   ########.fr       */
+/*   Created: 2023/10/13 18:41:26 by flucas-d          #+#    #+#             */
+/*   Updated: 2023/10/13 21:06:05 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*tmp;
 
-	i = 0;
-	while (s[i])
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (0);
+	*lst = NULL;
 }
-/*
-int	main()
-{
-	char	str[] = "procurando Nemo";
-	printf("%s\n", ft_strchr(str, 'N'));
-	return (0);
-}*/

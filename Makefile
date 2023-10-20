@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+         #
+#    By: flucas-d <flucas-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 22:39:15 by flucas-d          #+#    #+#              #
-#    Updated: 2023/10/11 18:49:45 by flucas-d         ###   ########.fr        #
+#    Updated: 2023/10/13 21:14:36 by flucas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ SRCS    = ft_atoi.c ft_itoa.c ft_toupper.c ft_tolower.c \
           ft_strlcat.c ft_substr.c ft_strtrim.c ft_strnstr.c ft_striteri.c \
 		  ft_strrchr.c
 
-BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
+BONUS_SRCS  = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+                ft_lstdelone.c ft_lstclear.c ft_lstiter.c
 
 OBJS    = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
