@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flucas-d <flucas-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: flucas-d <fabriciol.sousa@live.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 19:49:34 by flucas-d          #+#    #+#             */
-/*   Updated: 2023/10/20 16:48:00 by flucas-d         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:16:52 by flucas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,7 @@
 // #include <stdio.h>
 
 #include "libft.h"
-/*
-static size_t	ft_strlen(const char *s)
-{
-	size_t	len;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
-*/
 static void	ft_allocate(char **tab, char const *s, char sep)
 {
 	char		**array;
